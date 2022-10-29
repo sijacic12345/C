@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+    int alfa,beta,gama;
+    printf("Alfa:");
+    scanf("%d",&alfa);
+    printf("Beta:");
+    scanf("%d",&beta);
+    printf("Gama:");
+    scanf("%d",&gama);
+
+    if(alfa+beta+gama==180){
+        if(alfa==90 || beta==90 || gama==90){
+            printf("Trougao je pravougli");
+        }
+        else if(alfa==beta && alfa!=gama || alfa==gama && alfa!=beta || beta==gama && beta!=alfa){
+            printf("Trougao je jednakokraki");
+        }
+        else if(alfa==60 && beta==60 && gama==60){
+            printf("Trougao je jednakostranican");
+        }
+        else{
+            printf("Moze da se formira trougao");
+        }  
+    }
+    else{
+        printf("Od zadatih vrednosti ne moze da se kreira trougao");
+    }
+
+
+    
+    return 0;
+}
