@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+#define SIZE 20
+
+int main(){
+    
+    int niz[SIZE],i,n,A[SIZE];
+    
+    printf("Uneti koliko niz ima elemenata:");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++){
+        printf("niz[%d]=",i);
+        scanf("%d",&niz[i]);
+    }
+    printf("Niz A=[");
+    for(i=0;i<n;i++){
+        if(niz[i]%2==0){
+            A[i]=niz[i];
+            printf("%d,",A[i]);
+        }
+    }
+    printf("]");
+    
+
+
+    return 0;
+}
