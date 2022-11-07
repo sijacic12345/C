@@ -4,25 +4,54 @@
 
 int main(){
     
-    int niz[SIZE],i,n,A[SIZE];
-    
-    printf("Uneti koliko niz ima elemenata:");
-    scanf("%d",&n);
+    int niz[SIZE],n,i,A[SIZE],brA=0,B[SIZE],brB=0;
+    do{
+        printf("Uneti broj elemenata niza:");
+        scanf("%d",&n);
+    }while(n<=0 && n>SIZE);
 
     for(i=0;i<n;i++){
         printf("niz[%d]=",i);
         scanf("%d",&niz[i]);
     }
-    printf("Niz A=[");
+
+    printf("Niz=[");
+    for(i=0;i<n;i++){
+        printf("%d",niz[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("]\n");
+
     for(i=0;i<n;i++){
         if(niz[i]%2==0){
-            A[i]=niz[i];
-            printf("%d,",A[i]);
+            A[brA]=niz[i];
+            brA++;
+        }
+        if(niz[i]<0){
+            B[brB]=niz[i];
+            brB++;
+        }
+    }
+
+    printf("Paran niz=[");
+    for(i=0;i<brA;i++){
+        printf("%d",A[i]);
+        if(i>=0 && i<brA-1){
+            printf(",");
+        }
+    }
+    printf("]\n");
+    
+    printf("Negativan niz=[");
+    for(i=0;i<brB;i++){
+        printf("%d",B[i]);
+        if(i>=0 && i<brB-1){
+            printf(",");
         }
     }
     printf("]");
-    
-
 
     return 0;
 }
