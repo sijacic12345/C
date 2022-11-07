@@ -1,0 +1,47 @@
+#include<stdio.h>
+#define SIZE 50
+
+int main(){
+    int cena[SIZE],n,i,j,pom,cash,suma=0,brojac=0;
+    do{
+        printf("Uneti koliko ima proizvoda:");
+        scanf("%d",&n);
+    }while(n<=0 && n>SIZE);
+
+    for(i=0;i<n;i++){
+        printf("Cena proizvoda:");
+        scanf("%d",&cena[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(cena[i]>cena[j]){
+                pom=cena[i];
+                cena[i]=cena[j];
+                cena[j]=pom;
+
+            }
+
+        }
+    }
+    printf("Uneti koliko novca je raspolozivo:");
+    scanf("%d",&cash);
+   
+    printf("Cene:");
+    for(i=0;i<n;i++){
+        printf("%d",cena[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("\n");
+    for(i=0;i<n;i++){
+        suma=suma+cena[i];
+        if(suma<=cash){
+            brojac++;
+        }
+    }
+    printf("Mozete da kupite ukupno %d proizvoda",brojac);
+    
+    
+    return 0;
+}
