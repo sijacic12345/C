@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<math.h>
+#define SIZE 25
+
+int main() {
+    int niz[SIZE],n,i,suma=0,najblizi;
+    double sv,minRazlika;
+
+    do{
+        printf("Uneti broj elemenata niza:");
+        scanf("%d",&n);
+    }while(n<=0 || n>SIZE);
+
+    for(i=0;i<n;i++){
+        printf("niz[%d]=",i);
+        scanf("%d",&niz[i]);
+    }
+
+    printf("Niz je ");
+    for(i=0;i<n;i++){
+        printf("%d",niz[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("\n");
+
+    for(i=0;i<n;i++){
+        suma=suma+niz[i];
+    }
+    sv=suma/(double)n;
+    printf("Srednja vrednost je %.2lf\n",sv);
+
+    najblizi=niz[0];
+    minRazlika=fabs(sv-niz[0]);
+    for(i=0;i<n;i++){
+        if(minRazlika>=fabs(sv-niz[i])){
+            najblizi=niz[i];
+        }
+    }
+    printf("Najblizi je broj %d",najblizi);
+
+
+    
+    return 0;
+}
