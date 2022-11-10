@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define SIZE 30
+
+int main() {
+    
+    int niz[SIZE],n,i,j,k;
+    do{
+        printf("Uneti broj elemenata niza:");
+        scanf("%d",&n);
+    }while(n<=0 || n>SIZE);
+
+    for (i=0;i<n;i++){
+        printf("niz[%d]=",i);
+        scanf("%d",&niz[i]);
+    }
+
+    printf("Niz od %d elemenata: ",n);
+    for(i=0;i<n;i++){
+        printf("%d",niz[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("\n");
+
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(niz[i]==niz[j]){
+                n--;
+                for(k=j;k<n;k++){
+                    niz[k]=niz[k+1];
+                }
+                j--;
+            }
+        }
+    }
+
+    printf("Niz od %d elemenata: ",n);
+    for(i=0;i<n;i++){
+        printf("%d",niz[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("\n");
+
+
+
+    return 0;
+}
