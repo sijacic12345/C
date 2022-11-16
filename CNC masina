@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<math.h>
+#define SIZE 30
+
+int main(){
+    int n,i;
+    double x[SIZE],y[SIZE],dist,suma=0;
+
+    do{
+        printf("Ucitati zeljeni broj koordinata:");
+        scanf("%d",&n);
+    }while(n<=0 || n>SIZE);
+
+    for(i=0;i<n;i++){
+        printf("%d. tacka\n",i+1);
+        printf("x[%d]=",i);
+        scanf("%lf",&x[i]);
+        printf("y[%d]=",i);
+        scanf("%lf",&y[i]);
+        printf("\n");
+    }
+
+    printf("[");
+    for(i=0;i<n;i++){
+        printf("(%.2lf,%.2lf)",x[i],y[i]);
+        if(i>=0 && i<n-1){
+            printf(",");
+        }
+    }
+    printf("]\n");
+
+    for(i=1;i<n;i++){
+        dist=sqrt(pow(x[i-1]-x[i],2)+pow(y[i-1]-y[i],2));
+        suma=suma+dist;
+    }
+    printf("Ukupna predjena duzina glave masine je %.2lf",suma);
+
+    
+
+    return 0;
+}
