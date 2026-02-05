@@ -1,3 +1,4 @@
+/*CENA PROIZVODA*/
 #include<stdio.h>
 #define SIZE 50
 
